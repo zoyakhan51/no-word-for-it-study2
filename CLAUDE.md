@@ -670,3 +670,13 @@ Kaggle work happens only in the GPU steps (4 and 8, plus 7 if the hidden states 
 - [ ] Step 7 — E3 (+ E5) (`qwen` and `gemma` E3 done 2026-11-01: not supported in both; E5 still to do)
 - [ ] Step 8 — E4 (`qwen` done 2026-11-01: Absent at the main view)
 - [ ] Step 9 — write-up and go / no-go
+
+---
+
+## 13. Study 2 (Maryam's private copy, started 2026-11-02)
+
+- **Read `STUDY2.md` first.** It holds the question, design, hypotheses H1–H7 and the pass/fail rules, all fixed **before** any study 2 data. Any change after data goes in its deviations log with date and reason.
+- New code: `src/nwf/s2config.py` (all settings), `s2stimuli.py` (fresh items, seeds 201–206, same-colour sets), `s2run.py` (GPU: probe views at every layer, region averages, answer-position state, one-layer interventions), `analysis/layer_probe.py` (trained choose-one-of-four probe and answer-position probe, CPU), `analysis/s2report.py` (all numbers, figures and rule verdicts). Tests: `tests/test_s2.py`.
+- Kaggle: `kaggle/study2/run.py` (one cell; GPU T4 x2; secrets `GITHUB_TOKEN` with read access to this private repo, and `HF_TOKEN`). It runs the unit tests, builds the stimuli, a GPU smoke stage with checks, the main run, then the analysis.
+- Study 1 code and results are unchanged. Study 2 writes only to `results2/` and `data/stimuli2/`.
+- The trained probe's earlier designs (pair ridge regression, shuffled-label control for pairs) were dropped during testing on fake data: a shuffled-label control is not meaningful for a matching probe. The comparison is the same distance with every direction weighted equally (`untrained`).
