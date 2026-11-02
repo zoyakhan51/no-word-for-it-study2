@@ -13,7 +13,7 @@ import numpy as np
 from kaggle_secrets import UserSecretsClient
 
 START = time.time()
-REPO = "https://github.com/MaryammZafarr/no-word-for-it-study2.git"
+REPO = "https://github.com/zoyakhan51/no-word-for-it-study2.git"
 # pin a commit here once the code is final so the run can be traced to the exact code
 COMMIT = "main"
 CODE = Path("/tmp/code")
