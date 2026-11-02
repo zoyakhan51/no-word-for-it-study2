@@ -17,3 +17,6 @@ LOCAL_MODELS = os.environ.get("NWF_LOCAL_MODELS")
 SCRATCH = Path(os.environ.get("NWF_SCRATCH",ROOT/"cache"))
 CAPTIONS = Path(os.environ.get("NWF_CAPTIONS",ROOT/"assets"/"captions.txt"))
 STIMULI_MANIFEST = ROOT/"assets"/"stimuli_manifest.json"
+# the study two stimuli and results live apart from the first study so nothing of it is overwritten
+STIMULI2 = Path(os.environ.get("NWF_STIMULI2",DATA/"stimuli2"))
+RESULTS2 = Path(os.environ.get("NWF_RESULTS2",ROOT/"results2"))
